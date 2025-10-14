@@ -25,7 +25,7 @@ var simplemaps_worldmap_mapdata = {
         location_url: "",
         location_size: 25,
         location_type: 'image',
-        location_image_url: "assets/img/map_images/map-pin.png",
+        location_image_url: "map_images/map-pin.png",
         // location_image_url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='white' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E",
 
         location_border_color: "#b8c9f2",
@@ -1032,3 +1032,4 @@ var simplemaps_worldmap_mapdata = {
         }
     }
 };
+
