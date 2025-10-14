@@ -7,6 +7,7 @@ var simplemaps_worldmap_mapdata = {
         border_color: "#700000",
         popups: "on_click",
 
+
         //State defaults
         state_description: "Country description",
         state_color: "black",
@@ -24,8 +25,8 @@ var simplemaps_worldmap_mapdata = {
         location_url: "",
         location_size: 25,
         location_type: 'image',
-        location_image_url: "map_images/map-pin.png",
-        //location_image_url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='white' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E",
+        location_image_url: "assets/img/map_images/map-pin.png",
+        // location_image_url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='white' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E",
 
         location_border_color: "#b8c9f2",
         location_border: 2,
@@ -69,11 +70,9 @@ var simplemaps_worldmap_mapdata = {
         link_text: "View Website",
         state_image_url: "",
         state_image_position: "",
-        //location_image_url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E",
-
         border_hover_color: "",
         border_hover_size: "",
-        manual_zoom: ""
+        manual_zoom: "yes"
     },
     state_specific: {
         AF: {
@@ -781,7 +780,7 @@ var simplemaps_worldmap_mapdata = {
             lat: "-2.0201343718042812",
             lng: "29.915086557984797",
             name: "Rwanda <br> Number of Batches: 2",
-            description: ' <div class="content-container"><div class="text-content"><p>In the 2023/2024 year, we launched our first cohort in Rwanda, marking our inaugural venture into a new continent. Partnering with the <a href="https://www.rwandagirlsinitiative.org" target="_blank">Rwanda Girls Initiative</a>, we empowered bright female students through immersive English learning and educational support, showcasing the impact of our program and the strong connections between tutors and students. </p></div><div class="image-container"><img src="/map_images/RWEN19-grad1.png" alt="Cohort Image" /></div></div>',
+            description: ' <div class="content-container"><div class="text-content"><p>In the 2023/2024 year, we launched our first cohort in Rwanda, marking our inaugural venture into a new continent. Partnering with the <a href="https://www.rwandagirlsinitiative.org" target="_blank">Rwanda Girls Initiative</a>, we empowered bright female students through immersive English learning and educational support, showcasing the impact of our program and the strong connections between tutors and students. </p></div><div class="image-container"><img src="assets/img/map_images/RWEN19-grad1.png" alt="Cohort Image" /></div></div>',
         },
         "10": {
             lat: "7.607365622998655",
@@ -792,7 +791,7 @@ var simplemaps_worldmap_mapdata = {
         "11": {
             lat: "13.084",
             lng: "80.283",
-            name: "Chennai <br> Number of Batches: 4",
+            name: "Chennai <br> Number of Batches: 7",
             description: '<div class="content-container"><div class="text-content"><p></p></div> </div>'
         },
         "12": {
@@ -811,10 +810,10 @@ var simplemaps_worldmap_mapdata = {
             lat: "30.038374509420457",
             lng: "74.63240148965006",
             name: "Muktsar <br> Number of Batches: 2",
-            description: '<div class="content-container"><div class="text-content"><p> In July 2024, we launched a new batch, bringing together students and teachers in the same learning space for the first time. Starting as beginners, participants progressed to an advanced English curriculum covering grammar, speaking, listening, reading, and writing. Students in our program outperformed their peers in school assessments, and strong bonds were formed through regular interaction and shared growth. The involvement of teachers was a proud milestone, and the heartfelt appreciation from learners highlighted the impact and dedication of everyone involved.</p></div><div class="image-container"><img src="/map_images/INEN30.jpg" alt="Batch Image" /></div></div>'
+            description: '<div class="content-container"><div class="text-content"><p> In July 2024, we launched a new batch, bringing together students and teachers in the same learning space for the first time. Starting as beginners, participants progressed to an advanced English curriculum covering grammar, speaking, listening, reading, and writing. Students in our program outperformed their peers in school assessments, and strong bonds were formed through regular interaction and shared growth. The involvement of teachers was a proud milestone, and the heartfelt appreciation from learners highlighted the impact and dedication of everyone involved.</p></div><div class="image-container"><img src="assets/img/map_images/INEN30.jpg" alt="Batch Image" /></div></div>'
         }
     },
-
+    
     labels: {},
     legend: {
         entries: []
