@@ -70,31 +70,31 @@
         // Save original zoom level & marker size
         let baseZoomLevel = null;
         let baseMarkerSize = null;
-        
+
         function registerZoomHook() {
             if (window.simplemaps_worldmap) {
                 if (zoomIntervalID) {
-                    clearInterval(zoomIntervalID); // stop old zoom check if any
+                    clearInterval(zoomIntervalID);  // stop old zoom check if any
                 }
-        
+
                 // set base zoom + marker size on first load
                 if (baseZoomLevel === null) baseZoomLevel = simplemaps_worldmap.zoom_level;
                 if (baseMarkerSize === null) baseMarkerSize = simplemaps_worldmap.mapdata.main_settings.location_size;
-        
+
                 let lastZoomLevel = simplemaps_worldmap.zoom_level; // track last zoom
-        
+
                 // check zoom level every 0.2s
                 zoomIntervalID = setInterval(() => {
                     const currentZoom = simplemaps_worldmap.zoom_level;
-        
+
                     // run only if zoom changed & batches map is active
                     if (currentZoom !== lastZoomLevel && currentMap === "batches") {
                         lastZoomLevel = currentZoom;
-        
+
                         // figure out new size based on zoom change
                         const scaleFactor = baseZoomLevel / currentZoom;
                         const newSize = baseMarkerSize * scaleFactor;
-        
+
                         // smoothly resize markers
                         gradualZoomTo(newSize);
                     }
@@ -103,72 +103,78 @@
                 setTimeout(registerZoomHook, 100); // try again if map not loaded yet
             }
         }
-        
+
+
         // (optional) function to scale <img> elements with CSS
         function gradualResizeImageMarkers(increase, multiplier) {
             const steps = 10;
-            const interval = 10;
-        
+            const interval = 10; // ms between animation steps
+
+            // Delay briefly to let DOM update after zoom
             setTimeout(() => {
                 const images = document.querySelectorAll("#map img");
-        
+
                 images.forEach(img => {
                     // get current scale
                     const transform = img.style.transform;
                     const match = /scale\(([\d.]+)\)/.exec(transform);
                     const currentScale = match ? parseFloat(match[1]) : 1;
-        
+
                     // find target scale
-                    const targetScale = increase ? currentScale * multiplier : currentScale / multiplier;
+                    const targetScale = increase
+                        ? currentScale * multiplier
+                        : currentScale / multiplier;
+
                     const stepScale = (targetScale - currentScale) / steps;
-        
+
                     let currStep = 0;
-        
                     // animate step by step
                     const animate = setInterval(() => {
                         currStep++;
                         const newScale = currentScale + stepScale * currStep;
                         img.style.transform = `scale(${newScale})`;
-                        img.style.transformOrigin = "center center";
-        
+                        img.style.transformOrigin = "center center"; // ensures smooth zoom from center
+
                         if (currStep >= steps) clearInterval(animate);
                     }, interval);
                 });
-            }, 50);
+            }, 50); // wait ~1 frame after zoom
         }
-        
+
         // smooth size change for map markers
         function gradualZoomTo(targetSize) {
-            const steps = 10;         // how many steps in animation
-            const interval = 10;      // time between steps (ms)
+            const steps = 10;    // how many steps in animation
+            const interval = 10; // time between steps (ms)
             const startSize = simplemaps_worldmap.mapdata.main_settings.location_size;
             const stepSize = (targetSize - startSize) / steps;
-        
+
             let currStep = 0;
             const transition = setInterval(() => {
                 currStep++;
                 const newSize = startSize + stepSize * currStep;
-        
+
                 // update default marker size
                 simplemaps_worldmap.mapdata.main_settings.location_size = newSize;
-        
+
                 // update each marker's size
                 for (const key in simplemaps_worldmap_mapdata.locations) {
                     if (simplemaps_worldmap.map.locations[key]) {
                         simplemaps_worldmap.map.locations[key].size = newSize;
                     }
                 }
-        
+
                 // redraw map with new sizes
                 simplemaps_worldmap.refresh();
-        
+
                 // stop animation after steps done
                 if (currStep >= steps) clearInterval(transition);
             }, interval);
         }
 
+    
     </script>
 </body>
 
 
 </html>
+
