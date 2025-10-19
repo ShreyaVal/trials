@@ -67,93 +67,108 @@
                 });
             };
 
+        // Save original zoom level & marker size
+        let baseZoomLevel = null;
+        let baseMarkerSize = null;
+        
         function registerZoomHook() {
             if (window.simplemaps_worldmap) {
                 if (zoomIntervalID) {
-                    clearInterval(zoomIntervalID);
+                    clearInterval(zoomIntervalID); // stop old zoom check if any
                 }
-
-                let lastZoomLevel = simplemaps_worldmap.zoom_level;
+        
+                // set base zoom + marker size on first load
+                if (baseZoomLevel === null) baseZoomLevel = simplemaps_worldmap.zoom_level;
+                if (baseMarkerSize === null) baseMarkerSize = simplemaps_worldmap.mapdata.main_settings.location_size;
+        
+                let lastZoomLevel = simplemaps_worldmap.zoom_level; // track last zoom
+        
+                // check zoom level every 0.2s
                 zoomIntervalID = setInterval(() => {
                     const currentZoom = simplemaps_worldmap.zoom_level;
-
+        
+                    // run only if zoom changed & batches map is active
                     if (currentZoom !== lastZoomLevel && currentMap === "batches") {
-                                console.log("I just ran!");
-                                lastZoomLevel = currentZoom;
-                                if(true){
-                                    if(currentZoom === "out"){
-                                        simplemaps_worldmap.mapdata.main_settings.location_size /= 1.6 ; // Decreases marker size
-                                    }else if(currentZoom === "region"){
-                                        simplemaps_worldmap.mapdata.main_settings.location_size *= 1.6; // Increases marker size
-                                    }
-                                }
-                                
-
-                                simplemaps_worldmap.refresh(); // re-render the map with updated config
+                        lastZoomLevel = currentZoom;
+        
+                        // figure out new size based on zoom change
+                        const scaleFactor = baseZoomLevel / currentZoom;
+                        const newSize = baseMarkerSize * scaleFactor;
+        
+                        // smoothly resize markers
+                        gradualZoomTo(newSize);
                     }
                 }, 200);
             } else {
-            setTimeout(registerZoomHook, 100);
+                setTimeout(registerZoomHook, 100); // try again if map not loaded yet
             }
         }
-
+        
+        // (optional) function to scale <img> elements with CSS
         function gradualResizeImageMarkers(increase, multiplier) {
             const steps = 10;
-            const interval = 10; // ms between animation steps
-
-            // Delay briefly to let DOM update after zoom
+            const interval = 10;
+        
             setTimeout(() => {
                 const images = document.querySelectorAll("#map img");
-
+        
                 images.forEach(img => {
-                    // Get current scale from transform
+                    // get current scale
                     const transform = img.style.transform;
                     const match = /scale\(([\d.]+)\)/.exec(transform);
                     const currentScale = match ? parseFloat(match[1]) : 1;
-
-                    const targetScale = increase
-                        ? currentScale * multiplier
-                        : currentScale / multiplier;
-
+        
+                    // find target scale
+                    const targetScale = increase ? currentScale * multiplier : currentScale / multiplier;
                     const stepScale = (targetScale - currentScale) / steps;
-
+        
                     let currStep = 0;
-
+        
+                    // animate step by step
                     const animate = setInterval(() => {
                         currStep++;
                         const newScale = currentScale + stepScale * currStep;
                         img.style.transform = `scale(${newScale})`;
-                        img.style.transformOrigin = "center center"; // ensures smooth zoom from center
-
+                        img.style.transformOrigin = "center center";
+        
                         if (currStep >= steps) clearInterval(animate);
                     }, interval);
                 });
-            }, 50); // wait ~1 frame after zoom
+            }, 50);
         }
-
-        //Function to make the increase and decrease in marker size more gradual
-        //increase specifies whether we're increasing or decreasing marker size (True = increase, False = decrease)
-        //Multiplier specifies how much we're changing size by, ex: 2.5x
-        function gradualZoom(increase, multiplier) {
-            const steps = 10;
-            const interval = 1; //1 milliseconds for duration of each transition step
-
+        
+        // smooth size change for map markers
+        function gradualZoomTo(targetSize) {
+            const steps = 10;         // how many steps in animation
+            const interval = 10;      // time between steps (ms)
+            const startSize = simplemaps_worldmap.mapdata.main_settings.location_size;
+            const stepSize = (targetSize - startSize) / steps;
+        
             let currStep = 0;
-
-            let initialSize = simplemaps_worldmap.mapdata.main_settings.location_size;
-            let finalSize = (increase) ? simplemaps_worldmap.mapdata.main_settings.location_size * multiplier : simplemaps_worldmap.mapdata.main_settings.location_size / multiplier;
-
-            //This setInterval helps make the transition smoother
             const transition = setInterval(() => {
                 currStep++;
-
-                simplemaps_worldmap.mapdata.main_settings.location_size = initialSize + (finalSize - initialSize) * (currStep / steps);
+                const newSize = startSize + stepSize * currStep;
+        
+                // update default marker size
+                simplemaps_worldmap.mapdata.main_settings.location_size = newSize;
+        
+                // update each marker's size
+                for (const key in simplemaps_worldmap_mapdata.locations) {
+                    if (simplemaps_worldmap.map.locations[key]) {
+                        simplemaps_worldmap.map.locations[key].size = newSize;
+                    }
+                }
+        
+                // redraw map with new sizes
                 simplemaps_worldmap.refresh();
-
+        
+                // stop animation after steps done
                 if (currStep >= steps) clearInterval(transition);
-            }, interval)
-        }   
+            }, interval);
+        }
+
     </script>
 </body>
+
 
 </html>
