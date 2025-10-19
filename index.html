@@ -1,71 +1,639 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Map Toggle</title>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NRPPVF36');</script>
+        <!-- End Google Tag Manager -->
+    
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C97XZR5YN5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'G-C97XZR5YN5');
+    </script>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="google-site-verification" content="nlm6GDVzxGLEuxAwOO5RCRSexiywHyRmAlbROch6oMc" />
+    <meta name="viewport" content="width=device-width, user-scalable=0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Instilt Educate</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;ver=5.7"
+        type="text/css" media="all">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="css/milestone.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/nc-styles.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="css/gallery/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/gallery/owl.theme.default.css ">
+    <link rel="stylesheet" href="css/gallery/gallery-style.css">
+    <link rel="stylesheet" href="css/gallery/animate.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <script src="https://kit.fontawesome.com/21cad11b53.js" crossorigin="anonymous"></script>
+    <script id="mapdata-script" src="js/mapdata.js" type="application/javascript"></script>
+    <script id="mapjs-script" src="js/worldmap.js"></script>
+
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
+    <script>
+        window.TallyConfig = {
+        "formId": "mYzDb0",
+        "popup": {
+            "width": 450,
+            "layout": "modal",
+            "hideTitle": true,
+            "autoClose": 0,
+            "doNotShowAfterSubmit": true,
+        }
+        };
+    </script>
 </head>
 
-<body>
+<body id="page-top" data-new-gr-c-s-check-loaded="14.1006.0" data-gr-ext-installed="">
+     <!-- Google Tag Manager (noscript) -->
+     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRPPVF36"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Navigation-->
+    <div class="bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="navbar-container">
+                <div class="left-section">
+                    <button id="nav-button" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="content" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="fas fa-bars" style="color:white"></span>
+                    </button>
+                    
+                    <a class="navbar-brand" href="#page-top">
+                        <img src="assets/img/transparent.png" class="logo-img" width="50" height="100%" alt="Instilt Educate">
+                    </a> 
+                </div>
+                <div class="middle-text">
+                    <span>Instilt Educate</span>
+                </div>
+                <div class="right-section">
+                    <a class="social-icon" href="https://www.linkedin.com/company/78017229" target="_blank">
+                        <svg class="svg-inline--fa fa-linkedin fa-w-14 sm-icons" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+                    </a>
+                    <a class="social-icon" href="https://www.instagram.com/edu.instilt" target="_blank">
+                        <svg class="svg-inline--fa fa-instagram fa-w-14 sm-icons" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+                    </a>
+                    <a class="social-icon" href="https://www.youtube.com/@instilteducate280" target="_blank">
+                        <svg class="svg-inline--fa fa-youtube fa-w-18 sm-icons" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
+                    </a>
+                    <a id="nav-btn" class="nav-item nav-link-butn btn-danger js-scroll-trigger" href="https://bank.hackclub.com/donations/start/instilt-educate">Donate</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navContent">
+                    <ul class="navbar-nav ml-auto mr-0">
+                        <li class="nav-item"><a class="nav-link text-nowrap js-scroll-trigger" href="#mission">Mission</a></li>
+                        <li class="nav-item"><a class="nav-link text-nowrap js-scroll-trigger" href="#model">Model</a></li>
+                        <li class="nav-item"><a class="nav-link text-nowrap js-scroll-trigger" href="#method">Method</a></li>
+                        <li class="nav-item"><a class="nav-link text-nowrap js-scroll-trigger" href="#join-us-page">Join Us</a></li>
+                        <li class="nav-item"><a class="nav-link text-nowrap js-scroll-trigger" href="#partners">Partners</a></li>
+                        <li class="nav-item"><a class="nav-link text-nowrap js-scroll-trigger" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link text-nowrap js-scroll-trigger" href="#newsletter">Newsletter</a></li>
+                        <li class="nav-item"><a class="nav-link text-nowrap js-scroll-trigger" href="#team">Team</a></li>
+                        <li id="big-nav-donate" class="nav-item"><a class="nav-link-butn btn-danger btn js-scroll-trigger" href="https://bank.hackclub.com/donations/start/instilt-educate">Donate</a></li>
+                        <div class="menu-icons">
+                            <a href="https://www.linkedin.com/company/78017229" target="_blank">
+                                <svg class="svg-inline--fa fa-linkedin fa-w-14 sm-icons" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+                            </a>
+                            <a href="https://www.instagram.com/edu.instilt" target="_blank">
+                                <svg class="svg-inline--fa fa-instagram fa-w-14 sm-icons" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+                            </a>
+                            <a href="https://www.youtube.com/@instilteducate280" target="_blank">
+                                <svg class="svg-inline--fa fa-youtube fa-w-18 sm-icons" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
 
-    <span class="switcher switcher-1">
-        <input type="checkbox" id="switcher-1" onchange="toggleMap()">
-        <label for="switcher-1"></label>
-        <link rel="stylesheet" href="map.css">
-    </span>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0" style="font-family:montserrat !important;letter-spacing: 0px; font-weight:600; " id="title">Instilt Educate</h1>
+                <h2 class="text-white-50 mx-auto mt-4 mb-5" id="subtitle">Help us help children everywhere have equal opportunities at a bright future, no matter their background! </h2>    
+                <a class="btn btn-primary js-scroll-trigger" href="#join-us-page">Join us</a>
+            </div>
+            
+    </header>
 
-    <div id="map"></div>
+    
+    <!-- About-->
+    <section class="about-section text-center" id="mission">
+        <div class="container" id="mission-section">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-white mb-4 heading" id="our-mission" >Our Mission</h2>
+                    <p class="text-white" id="mission-subtitle">
+                        Instilt Educate is a fiscally sponsored 501(c)(3) nonprofit that provides free online tutoring to students from underprivileged backgrounds. The mission of the organization is to give those who may not possess the same opportunities as others more possibilities through quality lessons.
+                    </p>
+                </div>
+            </div>
+            <a class="btn btn-danger donate-btn" href="https://bank.hackclub.com/donations/start/instilt-educate" onclick="this.blur();" target="_blank">Donate Now</a>
+            <br>
+            <br>
+            <br>
+            <img class="img-fluid" src="assets/img/transparent.png" alt="" id="logo-image">
+        </div>
+    </section>
+
+    <!-- Milestones -->
+    <section id="milestone">
+        <ul id = "milestone-unorder">
+
+            <li class="milestone-list">
+                <div class="milestone-icon">
+                    <i class="fas fa-child fa-3x"></i>
+                </div>
+                <br>
+                <div class="milestone-details">
+                    <h4 class="milestone-title"><span class="count">5000</span>+</h4>
+                    <p class="milestone-text">Students</p>
+                </div>
+                <div class="milestone-line">
+                    <a class="milestone-1">
+                    <div class="milestone-indicator"></div>
+                    </a>
+                </div>
+            </li>
+
+            <li class="milestone-list">
+                <div class="milestone-icon">
+                    <i class="fas fa-school fa-3x"></i>
+                </div>
+                <br>
+                <div class="milestone-details">
+                    <h4 class="milestone-title"><span class="count">10</span>+</h4>
+                    <p class="milestone-text">Schools</p>
+                </div>
+                <div class="milestone-line">
+                    <a class="milestone-2">
+                    <div class="milestone-indicator"></div>
+                    </a>
+                </div>
+            </li>
+
+            <li class="milestone-list">
+                <div class="milestone-icon">
+                    <i class="fas fa-user-plus fa-3x"></i>
+                </div>
+                <br>
+                <div class="milestone-details">
+                    <h4 class="milestone-title"><span id="counter" class="count"></span>+</h4>
+                    <p class="milestone-text">Members</p>
+                </div>
+                <div class="milestone-line">
+                    <a class="milestone-3">
+                    <div class="milestone-indicator"></div>
+                    </a>
+                </div>
+            </li>
+
+            <li class="milestone-list">
+                <div class="milestone-icon">
+                    <i class="fas fa-chalkboard-teacher fa-4x"></i>
+                </div>
+                <br>
+                <div class="milestone-details">
+                    <h4 class="milestone-title"><span class="count">520</span>+</h4>
+                    <p class="milestone-text">Classes Per Month</p>
+                </div>
+                <div class="milestone-line">
+                    <a class="milestone-4">
+                    <div class="milestone-indicator"></div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+    </section>
 
 
+    <!-- MAP -->    
+    <h2 id="maptext" style="text-transform: none; text-align: center;">Diverse Community of Members</h2>
+    <br>
+    <div class="map-container">
+        <span class="switcher switcher-1">
+            <input type="checkbox" id="switcher-1" onchange="toggleMap()">
+            <label for="switcher-1"></label>
+        </span>
+        <div id="map"></div>
+    </div>
+    
+
+    <!-- Owl Carousel Gallery -->
+    <section id="model">
+        <div class="container">
+        <div class="heading">Our Model</div>
+        <p class="model-text">In an effort to grow and deepen the understanding of our students, we use a unique model. For our faculty, we pair one native English speaker with another tutor proficient in the language of the students. This way students are able to enjoy the best of both worlds as they are pushed to communicate seamlessly with a qualified tutor who speaks English in their day-to-day, allowing them some great outside exposure. At the same time, the other tutor is always to ensure that the students are following, maintaining a comfortable and familiar environment for the children.</p>
+        <div class="slider">
+            <div id='model-carousel' class="owl-carousel owl-theme"></div>
+        </div>
+        </div>
+    </section>
+
+<!-- Partners -->  
+    <section class="projects-section bg-light" id="partners" style="padding-top: 0rem !important;">
+        <div class="container">
+          <div class="heading">Our Partners</div>
+            <div class="partner-row">
+                <script id="partner-content" type="text/html">
+                    <a href="" id="partner-link" target="_blank">
+                        <div class="partner-column">
+                            <img id="partner-img" src="" alt="{NAME}">
+                            <h2 class="partner-heading"><span class="highlight-orange">{NAME}</span></h2>
+                        </div>
+                    </a>      
+                    <br>
+                </script>
+                <div class="partner-row" id="partner-card"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News --> 
+    <section id="news-updates">
+        <div class="heading">Our Stories</div>
+        <div class="news-container">
+            <div class="news-row" id="card-container"></div>
+        </div>
+        <div class="slider">
+            <div id='news-carousel' class="owl-carousel owl-theme d-none"></div>
+        </div>
+        <script src="/js/news-cards.js" type="module"></script>
+    </section>
+
+    <section class="signup-section" style="width: 100vw;background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000000 100%), !important;margin-left: calc(50% - 50vw);">
+            <section class="contact-section" id="method">
+                <div class="what-we-do heading">Our Method</div>
+
+                <div class="container">
+                    <div class="row" style="flex-wrap: wrap !important">
+                        <div class="col-md-4 mb-3 mb-md-0 meth-step" style="margin-bottom: 1rem !important;flex: 0 0 100% !important;">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center" style="display: flex; flex-direction: column; align-items: center;  padding: 1rem 4rem;">
+                                    <img src="assets/img/animation_500_krccb528.gif" style="width: 350px; height: 350px;">
+                                    <!-- <i class="fas fa-mobile-alt text-primary mb-2"></i> Font Awesome fontawesome.com -->
+                                    <hr class="my-4">
+                                    <h2 class="method-heading" id="interactive"><span class="highlight-orange">Online experience made interactive</span></h2>
+                                    <p class="method-about small" id="interactive-about" style="color: rgba(0, 0, 0, 1) !important;  text-align: center;">
+                                        Through our primary learning interface Zoom, we make sure to facilitate an environment where students can interact, collaborate, and inquire comfortably and effectively. Outside of class, we ensure continuous interaction through Whatsapp.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0 meth-step" style="margin-bottom: 1rem !important; flex: 0 0 100% !important;">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center" style="display: flex; flex-direction: column; align-items: center; padding: 1rem 4rem;">
+                                    <img src="assets/img/animation_500_krfiyr3f.gif" style="width: 350px; height: 350px;">
+                                    <!-- <i class="fas fa-map-marked-alt text-primary mb-2"></i> Font Awesome fontawesome.com -->
+                                    <hr class="my-4">
+                                    <h2 class="method-heading" id="application"><span class="highlight-blue">Learning by application</span></h2>
+                                    <p class="method-about small" id="application-about" style="color: rgba(0, 0, 0, 1) !important;  text-align: center;">
+                                        We work to ensure that all lesson plans include a variety of engaging activities that allow students to apply their knowledge in order to strengthen and enhance their understanding.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0 meth-step" style="margin-bottom: 1rem !important; flex: 0 0 100% !important;">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center" style="display: flex; flex-direction: column; align-items: center;   padding: 1rem 4rem;" >
+                                    <img src="assets/img/animation_500_krcb6rr7.gif" style="width: 350px; height: 350px;">
+                                    <!-- <i class="fas fa-envelope text-primary mb-2"></i> Font Awesome fontawesome.com -->
+                                    <hr class="my-4">
+                                    <h2 class="method-heading" id="curriculum"><span class="highlight-green">Cohesive curriculum with a wide scope</span></h2>
+                                    <p class="method-about small" id="curriculum-about" style="    color: rgba(0, 0, 0, 1) !important;  text-align: center;">
+                                        Our organization works to ensure that lesson plans are fully comprehensive and include varied content, inspired by reputable sources such as Indian Boards (CBSE), American Schooling Systems, Khan Academy, etc.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0 meth-step" style="margin-bottom: 1rem !important; flex: 0 0 100% !important;">
+                            <div class="card py-4 h-100 w-100">
+                                <div class="card-body text-center" style="display: flex; flex-direction: column; align-items: center;  padding: 1rem 4rem;">
+                                    <img src="assets/img/animation_500_krcapjaq.gif" style="width: 350px;  height: 350px;">
+                                    <!-- <i class="fas fa-map-marked-alt text-primary mb-2"></i> Font Awesome fontawesome.com -->
+                                    <hr class="my-4">
+                                    <h2 class="method-heading" id="learning"><span class="highlight-yellow">Tailored to their learning needs</span></h2>
+                                    <p class="method-about small" id="learning-about" style="color: rgba(0, 0, 0, 1) !important;  text-align: center;">
+                                        To ensure the success of the students, we have constructed a flexible curriculum that can be tailored to individual learning needs. With an adaptable approach and action-packed lessons, the students come first — always. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!-- Project One Row-->
+        <section id="join-us-page">
+            <div class="Apply-info" id="join-us" style="background: transparent;">
+                <div>
+                    <h4 id="applytext" class="heading" style="background: transparent;">Join Us</h4>
+                </div>
+                <div id="applytext-subtitle">
+                    <p class="mb-0 text-black-50"  id="join-us-subtitle" style="color: black !important; font-weight: 500;">To apply as a tutor, fill out the form below ↓</p>
+                </div>
+            </div>
+            <div class="typeform-widget" data-url="https://tally.so/embed/w4Jx0k"></div>
+        </section>
+            <script>
+                (function() {
+                    var qs, js, q, s, d = document,
+                        gi = d.getElementById,
+                        ce = d.createElement,
+                        gt = d.getElementsByTagName,
+                        id = "typef_orm",
+                        b = "https://embed.typeform.com/";
+                    if (!gi.call(d, id)) {
+                        js = ce.call(d, "script");
+                        js.id = id;
+                        js.src = b + "embed.js";
+                        q = gt.call(d, "script")[0];
+                        q.parentNode.insertBefore(js, q)
+                    }
+                })()
+            </script>
+        </div>
+    </section>  
+
+    <!-- Newsletter Signup -->
+    <section id="newsletter">
+        <h4 id="newsletter-text" class="heading" style="background: transparent; margin-bottom: 2rem; margin-top: 1rem;">Join our Newsletter</h4>
+    <!--<div style="text-align: center">
+            <iframe src="https://embeds.beehiiv.com/5cdb4eac-bacb-4b7e-afa4-ce28f5230f71" id="news-embed" data-test-id="beehiiv-embed" width="100%" height="320" frameborder="0" scrolling="no"></iframe>
+            <p class="news-footer">By submitting this form, you are consenting to receive marketing emails from us. You can revoke your consent to receive emails at any time by unsubscribing.</p>
+        </div>-->
+        
+        <div class="typeform-widget newsletter-widget" data-url="https://tally.so/embed/mYzDb0?hideTitle=1"> 
+        </div>
+        
+    </section>
+    <!-- Signup-->
+    <section class="signup-section" id="signup">
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 flex-container-form" id="margin-bottom-10">
+                        <div class="card py-4 h-100" style="border-radius: 0 !important;  border-top-left-radius: 0.25rem !important; border-top-right-radius: 0.25rem !important; ">
+                            <div class="card-body text-center" >
+                            <!-- <svg class="svg-inline--fa fa-envelope fa-w-16 text-primary mb-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                <path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z">
+                                </path>
+                            </svg> -->
+                                <!-- <i class="fas fa-envelope text-primary mb-2"></i> Font Awesome fontawesome.com -->
+                                <h4 id="contactext" style="text-transform: none;">Contact Us</h4>
+                                <hr style="margin: auto" class="my-4">
+                                <div class="small text-black-50" style="font-size: 1rem;">Do you think you can help us find students?</div>
+                                <form action="https://formspree.io/f/mqkoyozw" method="POST" style="margin-top: 1rem; height: 70%; display: flex; flex-direction: column; justify-content: center;" _lpchecked="1">
+                                <div class="concform">   
+                                    <label class="label">Your email:&nbsp;</label>
+                                    <input required type="email" name="_replyto" class="input">
+                                </div>
+                                <div class="concform">
+                                    <label class="label">Your name:&nbsp;</label>
+                                    <input required name="name" class="input">
+                                </div>
+                                <div class="concform">
+                                    <label class="label">Your message:&nbsp;</label>
+                                    <textarea required name="message" class="input"></textarea>
+                                </div>
+                                <div class="concform" id="submit-contact">
+                                    <button type="submit" class="btn send-button">Send</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="flex-direction: column !important;min-width: 50% !important;
+">
+    <div class="col-md-4 mb-3 mb-md-0" style="min-width: 100% !important; margin-bottom: 0.75em !important; flex-basis: 47.5% !important;">
+                        <div class="card py-4 h-100" style="min-width: 100% !important; max-height: 100%; padding-top: 0rem !important;">
+                            <div class="card-body text-center" style="padding-top: 4rem !important;">
+                                <div class="svg-inline--fa fa-envelope fa-2x text-primary mb-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
+                                <i class="fas fa-envelope" fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z" style="margin-bottom: 1.25rem !important;"></i>
+                                </div>
+                                <!-- <i class="fas fa-mobile-alt text-primary mb-2"></i> Font Awesome fontawesome.com -->
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr style="margin: auto" class="my-4">
+                                <a href="#!"></a>
+                                <a id="email-text" href="mailto:edu@instilt.com":hover{text-decoration:none;} class="small">edu@instilt.com</a>
+                            </div>
+                        </div>
+                    </div>
+<div class="col-md-4 mb-3 mb-md-0" style="min-width: 100% !important; flex-basis: 40% !important;">
+                        <div class="card py-4 h-100" style="min-width: 100% !important; max-height: 100%; padding-top: 0rem !important;">
+                            <div class="card-body text-center" style="padding-top: 4rem !important;">
+                                <svg class="svg-inline--fa fa-mobile-alt fa-2x text-primary mb-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
+                                <path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z">
+                                </path>
+                            </svg>
+                                <!-- <i class="fas fa-mobile-alt text-primary mb-2"></i> Font Awesome fontawesome.com -->
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr style="margin: auto" class="my-4">
+                                <div style="font-size: 1.75em" class="small text-black-50">+1 (236) 996-1299</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </section>
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </section>
+    <!--Our Team Page-->
+    <section class="projects-section bg-light" style="padding-top: 0rem !important;" id="team">
+        <div id="container" class="container">
+          <div id="teamabout" class="heading">Our Team</div>
+            <h2 id="loading_text" hidden></h2>
+            <script id="teams-page-content" type="text/html">
+            <div class="content">
+              <div class="img mb-4 sm:mb-5">
+                <a class="team-email" href="">
+                  <img class="team-image" onerror="removeElement(this)" class="red-highlight" loading="lazy" src="">
+                </a>
+              </div>
+              <div class="details">
+                <div class="name red-highlight capitalize">{NAME}</div>
+                <div class="division red-highlight">{DIVISION}</div>
+                <div class="location red-highlight">{LOCATION}</div>
+              </div>
+            </div>
+          </script>
+          <div id="main-card"></div>
+        </div>
+    </section>
+
+    <!-- Contact-->
+
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+      <div class="priv-bar">
+        <ul class="social-menu-1">
+            <il class="social-item-1">
+                <a href="https://instilt.com/privacy-policy/" class="menu-text">Privacy Policy</a>
+            </il>
+            <il class="social-item-1">
+                <a href="https://instilt.com/about/" class="menu-text">About Us</a>
+            </il>
+            <il class="social-item-1">
+                <a href="https://instilt.com/contact/" class="menu-text">Contact Us</a>
+            </il>
+            <il class="social-item-1">
+                <a href="https://instilt.com/" class="menu-text" style="cursor: pointer;">Main Page</a>
+            </il>
+        </ul>
+    </div>
+        <div class="gap-container">
+            <div class="center-part">
+                <div class="populated">
+                    
+                    <div class="bottom-text">
+                        <p style="text-align: left;font-size:17px;font-weight: 200;">All articles published here, present the author’s own opinions. We do not intend to hurt the sentiment of any groups/individuals. We respect all opinions and hope to live in a society that respects the views of all and upholds
+                            free speech.</p>
+                        <p style="text-align: left;font-size:17px;font-weight: 200;">Plagiarism of content is a punishable offence and will not be tolerated. All articles are the original work of the owners of the website unless explicitly stated.</p>
+                        <a href="https://instilt.com/" style="text-decoration: none;text-align: left;font-size:17px;color: #A9A7A7;font-weight: 200;">
+                            <p>Copyright © 2025 Instilt | Powered by Instilt</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="right-footer">
+                    <a href="https://instilt.com/">
+                        <img class="footer-logo" src="assets/img/logo-1-150x150.png">
+                    </a>
+                    <div style="margin-bottom: 20px;font-size:17px;font-weight: 200;">Let's instill a tilted perspective.</div>
+                    <div class="footer-icon">
+                        <a href="https://www.facebook.com/instilt.web" target="_blank">
+                            <div class="footer-icon-1">
+                                <span class="fab fa-facebook" style="width:32px;height:32px;position: relative; color: #222222;top: 9px;"></span>
+                            </div>
+                        </a>
+                        <a href="https://twitter.com/Instilt_" target="_blank">
+                            <div class="footer-icon-1">
+                                <span class="fab fa-twitter" style="width:32px;height:32px;position: relative; color: #222222;top: 9px;"></span>
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/edu.instilt" target="_blank">
+                            <div class="footer-icon-1">
+                                <span class="fab fa-instagram" style="width:32px;height:32px;position: relative; color: #222222;top: 9px;"></span>
+                            </div>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCUIHT4aOWq7wPXqjNwHR2wA" target="_blank">
+                            <div class="footer-icon-1">
+                                <span class="fab fa-youtube" style="width:32px;height:32px;position: relative; color: #222222;top: 9px;"></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/carousel-script.js"></script>
+    <script src="js/news-carousel-script.js" type="module"></script>
+
+    <script>
+        
+        let c = document.getElementById("counter");
+        c.innerHTML = Math.round(250).toString();
+    </script>
+    <script type="text/javascript" async src="https://embeds.beehiiv.com/attribution.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="js/news-carousel-script.js" type="module"></script>
+
+    <!-- MAP JS -->
     <script>
         let currentMap = "members";
         let zoomIntervalID = null;
 
-        function loadScript(src, callback) {
-            const script = document.createElement("script");
+
+        function removeScriptById(id) {
+            const el = document.getElementById(id);
+            if (el) el.parentNode.removeChild(el);
+        }
+
+        function addScript(id, src, onload) {
+            const script = document.createElement('script');
+            script.id = id;
             script.src = src;
-            script.onload = callback;
+            script.onload = onload || null;
             document.body.appendChild(script);
         }
 
         function toggleMap() {
             const checkbox = document.getElementById("switcher-1");
-
-            // Clear the previous map (if required)
             document.getElementById("map").innerHTML = "";
 
+            // Remove any existing map scripts
+            removeScriptById("mapdata-script");
+            removeScriptById("mapjs-script");
+
             if (checkbox.checked) {
-                // If checkbox is checked, load the Batches map
-                loadScript("batches_mapdata.js", () => {
-                    loadScript("batches_map.js", () => {
-                        console.log("Batches map loaded.");
-                        
+                // Batches map
+                addScript("mapdata-script", "js/batches_mapdata.js", function() {
+                    addScript("mapjs-script", "js/batches_map.js", function() {
                         setTimeout(registerZoomHook, 50);
-                        console.log(simplemaps_worldmap.mapdata.main_settings.location_size);
+                        currentMap = "batches";
                     });
                 });
-                currentMap = "batches";
             } else {
-                // If checkbox is unchecked, load the Members map
-                
-                loadScript("mapdata.js", () => {
-                    loadScript("map.js", () => {
-                        console.log("Members map loaded.");
+                // Members map
+                addScript("mapdata-script", "js/mapdata.js", function() {
+                    addScript("mapjs-script", "js/worldmap.js", function() {
+                        currentMap = "members";
                     });
                 });
-                currentMap = "members";
             }
         }
 
         // Load the initial map
         window.onload = () => {
-                loadScript("mapdata.js", () => {
-                    loadScript("map.js", () => {
-                        console.log("Members map loaded.");
-                    });
+            document.getElementById("map").innerHTML = "";
+            removeScriptById("mapdata-script");
+            removeScriptById("mapjs-script");
+            addScript("mapdata-script", "js/mapdata.js", function() {
+                addScript("mapjs-script", "js/worldmap.js", function() {
+                    currentMap = "members";
                 });
-            };
+            });
+        };
 
         // Save original zoom level & marker size
         let baseZoomLevel = null;
@@ -171,10 +739,13 @@
             }, interval);
         }
 
-    
+        // toggleMap();
     </script>
+
 </body>
-
-
+<script>
+    let textarea=document.querySelector("textarea");
+    let input=document.querySelector("form input").getBoundingClientRect().width;
+    textarea.style.width=input+"px";
+</script>
 </html>
-
